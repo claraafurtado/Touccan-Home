@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Touccan</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap">
+</head>
+<body>
+    <div class="container">
+        <!-- Menu (Lado Esquerdo) -->
+        <div class="sidebar">
+            <div class="sidebar-logo">
+                <img src="./Logo titulo.png" alt="Logo Touccan">
+            </div>
+            <ul class="sidebar-menu">
+                <li class="menu-item">
+                    <img src="./Icon - home.png" alt="Página Inicial">
+                    <a href="#">Página Inicial</a>
+                </li>
+                <li class="menu-item">
+                    <img src="./Icon - pesquisa.png" alt="Pesquisar">
+                    <a href="#">Pesquisar</a>
+                </li>
+                <li class="menu-item">
+                    <img src="./Icon - notificação.png" alt="Notificações">
+                    <a href="#">Notificações</a>
+                </li>
+                <li class="menu-item">
+                    <img src="./Icon - chat.png" alt="Mensagens">
+                    <a href="#">Mensagens</a>
+                </li>
+                <li class="menu-item">
+                    <img src="Icon - histórico.png" alt="Histórico">
+                    <a href="#">Histórico</a>
+                </li>
+                <li class="menu-item">
+                    <img src="./carteira - icone.png" alt="Cofre">
+                    <a href="#">Cofre</a>
+                </li>
+                <li class="menu-item">
+                    <img src="./Icon - configurações.png" alt="Configurações">
+                    <a href="#">Configurações</a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Conteúdo Principal -->
+        <div class="main-content">
+            <!-- Abas -->
+            <div class="tabs">
+                <button class="tab-button active" data-tab="perto">Perto de Você</button>
+                <button class="tab-button" data-tab="urgente">Urgente</button>
+            </div>
+
+            <!-- Conteúdo das Abas -->
+            <div class="tab-content active" id="perto">
+                <div class="job-card">
+                    <img src="./icon - foto_usuario.png" alt="Foto do Freelancer">
+                    <div class="job-info">
+                        <h3 class="job-title">Assistente Administrativo</h3>
+                        <p class="job-difficulty">
+                            <span>Dificuldade:</span> <span>Moderada</span>
+                        </p>
+                        <p class="job-description">Trabalho focado em organizar e atender clientes com intuito de disponibilidade hoje!</p>
+                        <p class="job-timing">Local: Jandira, SP | Horário: 08:00 - 16:00 | Preço: R$ 80,00</p>
+                        <button class="register-btn">Cadastre-se</button>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="tab-content" id="urgente">
+                <!-- Conteúdo da aba Urgente aqui -->
+                <p>Em Andamento</p>
+            </div>
+        </div>
+
+        <!-- Filtros -->
+        <div class="filter-container">
+            <div class="filter">
+                <h3>Filtros</h3>
+                <div class="filter-section">
+                    <label class="filter-label">Horário</label>
+                    <input type="time" class="time-box">
+                </div>
+                <div class="filter-section">
+                    <label class="filter-label">Data</label>
+                    <input type="date">
+                </div>
+                <button class="apply-btn">Aplicar</button>
+            </div>
+        </div>
+       
+ <div class="profile-icon">
+    <img src="./person.png" alt="Perfil">
+ </div>
+
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabs = document.querySelectorAll('.tab-button');
+            const contents = document.querySelectorAll('.tab-content');
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    tabs.forEach(t => t.classList.remove('active'));
+                    contents.forEach(c => c.classList.remove('active'));
+
+                    tab.classList.add('active');
+                    document.getElementById(tab.dataset.tab).classList.add('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

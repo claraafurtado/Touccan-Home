@@ -1,0 +1,358 @@
+/* Reset básico e configuração de fonte */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #EBEBEB;
+    display: flex;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+}
+
+/* Menu lateral */
+.sidebar {
+    width: 220px;
+    background-color: #EBEBEB;
+    padding: 50px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Logo Touccan tamanho */
+.sidebar-logo {
+    width: 150%;
+    margin-bottom: 90px;
+    margin-left: -55px;
+}
+
+/* Logo Touccan posição */
+.sidebar-logo img {
+    max-width: 100%;
+    height: auto;
+    margin-top: -60px;
+}
+
+/* Linha horizontal, divisória do site */
+.sidebar::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 1px;
+    height: 100%;
+    background-color: #929292;
+}
+
+.sidebar-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    flex-grow: 5;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Organização/posicionamento do menu */
+.menu-item {
+    margin: 17px 0;
+    display: flex;
+    align-items: center;
+}
+
+/*Tamanho da imagem*/
+.menu-item img {
+    width: 33px;
+    height: 33px;
+    margin-right: 20px;
+}
+
+/*Design da fonte*/
+.menu-item a {
+    text-decoration: none;
+    color: #333333;
+    font-size: 20px;
+    font-weight: 600; /* Inter Semi Bold */
+    font-family: 'Inter', sans-serif; /* Aplicar a fonte */
+}
+
+.menu-item a:hover {
+    color: #F07B07;
+}
+
+/*Design do feed*/
+.main-content {
+    flex: 1;
+    padding: 20px;
+    background-color: #EBEBEB;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza o conteúdo horizontalmente */
+}
+
+/* Abas */
+.tabs {
+    display: flex;
+    justify-content: center; /* Centraliza as abas */
+    margin-bottom: 20px;
+    margin-top: 60px;
+}
+
+.tab-button {
+    padding: 10px 20px;
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    color: #333;
+    position: relative;
+    margin: 0 125px; /* Espaçamento horizontal */
+}
+
+.tab-button.active {
+    color: #F07B07;
+}
+
+.tab-button.active::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background-color: #F07B07;
+}
+
+.tab-button:not(.active) {
+    color: #333;
+}
+
+.tab-button:not(.active)::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background-color: transparent;
+}
+
+.tab-content {
+    display: none;
+    text-align: center; /* Centraliza o conteúdo das abas */
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* Seção de Filtros */
+.filter-container {
+    width: 400px; /* Ajuste o tamanho conforme necessário */
+    background-color: #D9D9D9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    position: relative; /* Permite posicionar o botão aplicável mais abaixo */
+}
+
+.filter {
+    background-color: #b4b4b4;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.filter h3 {
+    font-size: 25px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 50px;
+    margin-top: -370px;
+
+}
+
+/* Estilo das caixas de filtro */
+/* Seção de Filtros */
+.filter-container {
+    width: 400px; /* Ajuste o tamanho conforme necessário */
+    background-color: #D9D9D9;
+    padding: 20px;
+    position: relative; /* Permite posicionar o botão aplicável mais abaixo */
+}
+
+.filter {
+    background-color: #D9D9D9;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.filter h3 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Estilo das caixas de filtro */
+.filter-section {
+    margin-bottom: 30px;
+}
+
+.filter-label {
+   
+        background-color: #E97911; /* Cor laranja */
+        color: white; /* Cor do texto */
+        display: inline-block; /* Faz o fundo se ajustar ao tamanho do texto */
+        padding: 5px 15px; /* Espaçamento interno */
+        border-radius: 1px; /* Cantos arredondados, se desejar */
+        font-size: 16px; /* Tamanho da fonte */
+        font-weight: bold; /* Negrito, se desejar */
+        margin: 11px;
+    
+    
+}
+
+.filter-section input[type="date"],
+.filter-section input[type="time"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #a5a0a0;
+    border-radius: 5px;
+}
+
+.time-box {
+    background-color: #FFF;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.apply-btn {
+    background-color: #E97911;
+    color: #fff;
+    border: none;
+    padding: 15px 20px;
+    border-radius: 1px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 120px; /* Posição mais baixa */
+    transition: background-color 0.3s;
+}
+
+.apply-btn:hover {
+    background-color: #d86b0c; /* Cor um pouco mais escura no hover */
+}
+
+/* Cards de trabalho */
+.job-card {
+    display: flex;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    padding: 20px;
+    margin: 20px auto; /* Centraliza os anúncios */
+    align-items: center;
+    position: relative;
+}
+
+.job-card img {
+    width: 50px; /* Tamanho da imagem */
+    height: 50px; /* Tamanho da imagem */
+    margin-right: 20px;
+    border-radius: 50%;
+    margin-top: -160px; /* Ajuste a margem superior conforme necessário */
+}
+
+.job-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column; /* Alinha os elementos verticalmente */
+    text-align: left; /* Alinha o texto à esquerda */
+}
+
+.job-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #6D6D6D; /* Cor do título */
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+.job-difficulty {
+    font-size: 16px;
+    color: #6D6D6D; /* Cor da dificuldade */
+    margin-bottom: 10px;
+}
+
+.job-difficulty span {
+    color: #F07B07; /* Cor do grau de dificuldade */
+}
+
+.job-description {
+    font-size: 16px;
+    color: #666;
+    margin-top: 10px;
+}
+
+.register-btn{
+    background-color: #E97911;
+    width: 400px; /* Largura fixa */
+    height: 32px; /* Altura fixa */
+    border: none;
+    color: #EBEBEB;
+    border-radius: 5px;
+    
+}
+
+.job-timing {
+    font-size: 14px;
+    color: #000000;
+    margin-top: 10px;
+}
+
+/* Linha decorativa ao lado do botão */
+.job-card::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 10px;
+    background-color: #F07B07; /* Cor da linha */
+    border-radius: 10px 0 0 10px; /* Arredondamento nos cantos */
+}
+
+/* Ícone do perfil */
+.profile-icon {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 40px; /* Ajuste conforme necessário */
+    height: 40px; /* Ajuste conforme necessário */
+}
+
+.profile-icon img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%; /* Faz a imagem ser redonda, se desejado */
+    cursor: pointer; 
+}
